@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualizer</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./script.js" defer></script>
+
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark container-fluid" id="navbar">
+        <span id="visualizer" class="navbar-brand mb-0 h1">Visualizer</span>
+
+        <div class="dropdown" id="algo">
+          <button
+            class="btn btn-secondary dropdown-toggle ml-4"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Algorithm
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item" id="bfs">BFS</button>
+            <button class="dropdown-item" id="dfs">DFS</button>
+            <button class="dropdown-item" id="astar">Astar</button>
+          </div>
+        </div>
+        <hr>
+        <div id="buttons" class="ml-4 mr-0">
+          <button id="startNode" class="btn btn-sm btn-secondary mx-1 ">
+            Start Node
+          </button>
+
+          <button id="endNode" class="btn btn-sm btn-secondary mx-1">
+            End Node
+          </button>
+
+          <button id="startSearch" class="btn btn-sm btn-secondary mx-1">
+            Start Searching
+          </button>
+
+          <button id="createPattern" class="btn btn-sm btn-secondary mx-1">
+            Create Pattern
+          </button>
+
+          <button id="clearAll" class="btn btn-sm btn-secondary mx-1">
+            Clear All
+          </button>
+
+          <button
+            id="help"
+            class="btn btn-sm btn-secondary mx-1"
+            style="background-color: rosybrown!important"
+          >
+            HELP!
+          </button>
+        </div>
+
+        <div class="dropdown mr-5" id="extra">
+          <button
+            class="btn btn-secondary dropdown-toggle ml-4"
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Extra
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button id="wall" class="dropdown-item btn btn-sm btn-secondary mx-1">
+              Wall
+            </button>
+
+            <button id="erase" class="dropdown-item btn btn-sm btn-secondary mx-1">
+              Erase
+            </button>  
+          </div>
+        </div>
+        
+        <!--Code frm here is adding audio till main tag-->
+    <div class="dropdown mr-5" id="audio">
+          <button
+            class="btn btn-secondary dropdown-toggle ml-4"
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Audio
+          </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button id="Introduction" class="dropdown-item btn btn-sm btn-secondary mx-1">
+	          Introduction 
+	        <br>
+	          <audio controls>
+		      
+              <source src="https://cdn.glitch.com/f76025a1-3d10-4f32-a5e8-c9667c97aea7%2FIntroduction.mp4?v=1616345310818" type="audio/mpeg">
+            Your browser does not support the
+            <code>audio</code> element.
+	          </audio>
+            
+        </button>
+        
+            <button id="BFS_audio" class="dropdown-item btn btn-sm btn-secondary mx-1">
+              BFS 
+              <br>
+	          <audio controls>
+		      
+              <source src="https://cdn.glitch.com/f76025a1-3d10-4f32-a5e8-c9667c97aea7%2FBFS%20Audio.mp4?v=1616345333664" type="audio/mpeg">
+            Your browser does not support the
+            <code>audio</code> element.
+	          </audio>
+            
+            </button>
+            
+            <button id="DFS_audio" class="dropdown-item btn btn-sm btn-secondary mx-1">
+              DFS 
+              <br>
+	          <audio controls>
+		      
+              <source src="https://cdn.glitch.com/f76025a1-3d10-4f32-a5e8-c9667c97aea7%2FDFS%20Audio.mp4?v=1616345345039" type="audio/mpeg">
+            Your browser does not support the
+            <code>audio</code> element.
+	          </audio>
+            
+            </button>
+       </div>    
+      </div>
+      </nav>
+    </header>
+    <br>
+
+
+    
+    
+    <main>
+      <div id="grid"></div>
+
+      <div id="info"></div>
+    </main>
+
+    <footer>
+      <div id="modeName" class="my-2"></div>
+      <div id="message" class="my-2"></div>
+    </footer>
+  </body>
+</html>

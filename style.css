@@ -1,0 +1,148 @@
+body {
+  margin: auto;
+  text-align: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#grid {
+  background-color: #52575d;
+  display: grid;
+  grid-template-columns: repeat(50, auto);
+  height: 520px;
+  width: 1000px;
+  line-height: 0px;
+  padding: 0.1px;
+  margin: auto;
+}
+
+.block {
+  height: 20px;
+  width: 20px;
+  border: 0.2px solid #e0ece4;
+  padding: 0px;
+}
+
+
+#navbar {
+  background-color:  #1b262c!important;
+  color: mintcream!important;
+}
+
+/*button color in dropdown box initally was #404040 which gave grey bg a lil changes to be made here with colour and !important part*/
+button {
+  background-color: white;
+/*important;*/
+  margin: 3px!important;
+}
+
+#visualizer {
+  padding: 10px;
+  color: white;
+}
+
+@keyframes searchAnimation {
+  from {
+    background-color: purple;
+    border-color: green;
+    border-width: 1px;
+  }
+
+  to {
+    background-color: orange;
+    border-color: black;
+    border-width: 0.8px;
+  }
+}
+
+@keyframes pathAnimation {
+  from {
+    background-color: #51eaea;
+    border-color: yellow;
+    border-width: 1px;
+  }
+
+  to {
+    background-color: yellow;
+    border-color: #51eaea;
+    border-width: 0.8px;
+  }
+}
+
+.searchBlock {
+  animation-name: searchAnimation;
+  animation-duration: 4s;
+  background-color: orange;
+    border-color: black;
+    border-width: 0.8px;
+  /*background-color: lightgray;*/
+}
+
+.pathBlock {
+  animation-name: pathAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+  background-color: blue;
+  border-color: lightyellow;
+}
+
+#modeName {
+  background-color: yellow;
+}
+
+@keyframes attentionAnimation {
+  0% {
+    border: yellow solid 0.2px;
+  }
+  
+  25% {
+    border: red solid .4px;
+  }
+  
+  50% {
+    border: pink solid 1px;
+  }
+  
+  75% {
+    border: orange solid .8px;
+  }
+  
+  100% {
+    border: purple solid 1px;
+  }
+}
+
+
+.attention {
+  animation-name: attentionAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes blinkAnimation {
+  from {
+    background-color: darkgray;
+  }
+  to {
+    bakground-color: slategray;
+  }
+}
+
+.blink {
+  animation-name: blinkAnimation;
+  animation-duration: .3s;
+}
+
+.wall {
+  background-color: #f7d1ba;
+}
+
+.startNode {
+  background-color: green;
+}
+
+.endNode {
+  background-color: crimson;
+}
+
